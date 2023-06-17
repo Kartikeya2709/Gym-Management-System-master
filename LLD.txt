@@ -1,0 +1,71 @@
+Low-Level Design (LLD) for GYM Management System (MERN Project)
+
+Frontend Components:
+
+a. User Interface Components:
+
+Header: Displays the logo, navigation menu, and user authentication controls.
+Home Page: Shows an overview of the gym, including featured classes, membership options, and testimonials.
+Member Dashboard: Displays member-specific information, such as profile details, class schedule, payment history, and renewal reminders.
+Trainers Page: Lists all available trainers with their profiles and qualifications.
+Class Schedule: Shows the schedule of classes, allowing members to enroll in specific classes.
+Admin Dashboard: Provides administrative functionalities, including member and trainer management, class scheduling, and reporting.
+b. Redux Store and Actions:
+
+Authentication: Manages user authentication and authorization.
+Member Actions: Handles member-related operations, such as fetching member data, updating profiles, and handling payments.
+Trainer Actions: Handles trainer-related operations, such as fetching trainer data, updating profiles, and managing class assignments.
+Class Actions: Handles class-related operations, such as retrieving class schedules and managing member enrollments.
+c. React Router Configuration:
+
+Defines routes and maps them to corresponding components, enabling navigation within the application.
+Backend Components:
+
+a. Express.js Routes:
+
+Authentication Routes: Handles user authentication, registration, and authorization.
+Member Routes: Handles member-related operations, such as fetching member data, updating profiles, and managing payments.
+Trainer Routes: Handles trainer-related operations, such as fetching trainer data, updating profiles, and managing class assignments.
+Class Routes: Handles class-related operations, such as retrieving class schedules, managing enrollments, and generating reports.
+b. Controllers:
+
+Authentication Controller: Validates user credentials, generates authentication tokens, and handles authorization.
+Member Controller: Implements the logic for member-related operations, such as fetching member data, updating profiles, and managing payments.
+Trainer Controller: Implements the logic for trainer-related operations, such as fetching trainer data, updating profiles, and managing class assignments.
+Class Controller: Implements the logic for class-related operations, such as retrieving class schedules, managing enrollments, and generating reports.
+c. MongoDB Models:
+
+User Model: Represents user accounts, including member, trainer, and administrator accounts.
+Member Model: Defines the structure and schema for member data, including personal information, membership details, and payment history.
+Trainer Model: Defines the structure and schema for trainer data, including personal information, qualifications, and availability.
+Class Model: Defines the structure and schema for class data, including schedule details, assigned trainer, and enrolled members.
+Database Schema:
+
+a. User Collection:
+
+_id: ObjectId
+name: String
+email: String
+password: String
+role: String (member, trainer, admin)
+b. Member Collection:
+
+_id: ObjectId
+userId: ObjectId (reference to the corresponding User document)
+profile: Object (member profile details)
+membership: Object (membership details)
+payments: Array of Objects (payment history)
+c. Trainer Collection:
+
+_id: ObjectId
+userId: ObjectId (reference to the corresponding User document)
+profile: Object (trainer profile details)
+qualifications: Array of Objects (trainer qualifications)
+availability: Array of Objects (trainer availability for classes)
+d. Class Collection:
+
+_id: ObjectId
+name: String
+description: String
+schedule: Object (class schedule details)
+trainerId: ObjectId (reference to the corresponding Trainer
